@@ -1,63 +1,53 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Flowchart</title>
-<meta name="description" content="猫の家系図を作ってみました。猫の位置を動かすことができます。" />
-<!-- Copyright 1998-2017 by Northwoods Software Corporation. -->
-<meta charset="UTF-8">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gojs/1.7.29/go-debug.js"></script>
-<script src="../release/go.js"></script>
-<script src="../assets/js/goSamples.js"></script>  <!-- this is only for the GoJS Samples framework -->
-<!-- The DIV for a Diagram needs an explicit size or else we will not see anything.
-     In this case we also add a background color so we can see that area. -->
-<h1>猫の様子</h1>
-<p>猫の家系図を作っています。</p>
-<div id="myDiagramDiv"
-     style="width:950px; height:400px; background-color: #DAE4E4;"></div>
+
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+
+<div id="paypal-button-container"></div>
+
 <script>
-var $ = go.GraphObject.make;
 
-var myDiagram =
-  $(go.Diagram, "myDiagramDiv",
-    {
-      initialContentAlignment: go.Spot.Center, // center Diagram contents
-      "undoManager.isEnabled": true, // enable Ctrl-Z to undo and Ctrl-Y to redo
-      layout: $(go.TreeLayout, // specify a Diagram.layout that arranges trees
-                { angle: 90, layerSpacing: 35 })
-    });
+    // Render the PayPal button
 
-// the template we defined earlier
-myDiagram.nodeTemplate =
-  $(go.Node, "Horizontal",
-    { background: "#44CCFF" },
-    $(go.Picture,
-      { margin: 10, width: 50, height: 50, background: "red" },
-      new go.Binding("source")),
-    $(go.TextBlock, "Default Text",
-      { margin: 12, stroke: "white", font: "bold 16px sans-serif" },
-      new go.Binding("text", "name"))
-  );
+    paypal.Button.render({
 
-// define a Link template that routes orthogonally, with no arrowhead
-myDiagram.linkTemplate =
-  $(go.Link,
-    { routing: go.Link.Orthogonal, corner: 5 },
-    $(go.Shape, { strokeWidth: 3, stroke: "#555" })); // the link shape
+        // Set your environment
 
-var model = $(go.TreeModel);
-model.nodeDataArray =
-[
-  { key: "1",              name: "Don Meow",   source: "https://raw.githubusercontent.com/NorthwoodsSoftware/GoJS/master/learn/cat1.png" },
-  { key: "2", parent: "1", name: "Demeter",    source: "https://raw.githubusercontent.com/NorthwoodsSoftware/GoJS/master/learn/cat2.png" },
-  { key: "3", parent: "1", name: "Copricat",   source: "https://raw.githubusercontent.com/NorthwoodsSoftware/GoJS/master/learn/cat3.png" },
-  { key: "4", parent: "3", name: "Jellylorum", source: "https://coconala.com/uploaded_files/view/2920520" },
-  { key: "5", parent: "3", name: "Alonzo",     source: "https://coconala.com/uploaded_files/view/2920521" },
-  { key: "6", parent: "2", name: "Munkustrap", source: "https://coconala.com/uploaded_files/view/2921043" }
-];
-myDiagram.model = model;
+        env: 'sandbox', // sandbox | production
+
+        // Specify the style of the button
+
+        style: {
+            label: 'checkout',
+            size:  'responsive',    // small | medium | large | responsive
+            shape: 'pill',     // pill | rect
+            color: 'gold'      // gold | blue | silver | black
+        },
+
+        // PayPal Client IDs - replace with your own
+        // Create a PayPal app: https://developer.paypal.com/developer/applications/create
+
+        client: {
+            sandbox:    'AZDxjDScFpQtjWTOUtWKbyN_bDt4OgqaF4eYXlewfBP4-8aqX3PiV8e1GWU6liB2CUXlkA59kJXE7M6R',
+            production: '<insert production client id>'
+        },
+
+        payment: function(data, actions) {
+            return actions.payment.create({
+                payment: {
+                    transactions: [
+                        {
+                            amount: { total: '0.01', currency: 'USD' }
+                        }
+                    ]
+                }
+            });
+        },
+
+        onAuthorize: function(data, actions) {
+            return actions.payment.execute().then(function() {
+                window.alert('Payment Complete!');
+            });
+        }
+
+    }, '#paypal-button-container');
+
 </script>
-
-
-</body>
-</html>
