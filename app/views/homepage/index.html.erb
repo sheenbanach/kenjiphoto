@@ -13,7 +13,17 @@
       margin-bottom: 0;
       border-radius: 0;
     }
+    img {
+      border: 0px solid #F8F8FF ;
+      border-radius: 0px;
+      padding: 35px;
+      width: 250px;
+      height: 50%;
+  }
 
+  img:hover {
+      box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  }
     /* Add a gray background color and some padding to the footer */
     footer {
       background-color: #f2f2f2;
@@ -54,6 +64,9 @@
   </div>
 </div>
 
+
+
+<!-- 一番上のスライダー -->
 <div class="container">
   <h2>Carousel Example</h2>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -62,21 +75,39 @@
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
+
       <div class="item active">
-        <center><img src="http://res.cloudinary.com/db45meith/image/upload/v1506589721/ujijt5uy5znmjyic2zbk.png" alt="Los Angeles" style="width:50%;"></center>
-      </div>
+        <a target="_blank" href="http://res.cloudinary.com/db45meith/image/upload/v1506589721/ujijt5uy5znmjyic2zbk.png">
+        <center><img src="http://res.cloudinary.com/db45meith/image/upload/v1506589721/ujijt5uy5znmjyic2zbk.png" alt="Los Angeles" style="width:50%; height:10%;"></center>
+        </a>
+        </div>
 
       <div class="item">
-        <center><img src="http://res.cloudinary.com/db45meith/image/upload/v1506589612/qp3naolrcdhtu4qdyejt.png" alt="Chicago" style="width:50%;"></center>
-      </div>
+        <center><img src="http://res.cloudinary.com/db45meith/image/upload/v1506589612/qp3naolrcdhtu4qdyejt.png" alt="Chicago" style="width:50%; height: 50%;"></center>
+          </div>
 
       <div class="item">
-        <center><img src="http://res.cloudinary.com/db45meith/image/upload/v1506585970/pgprjncyp1kin6tbf59b.png" alt="New york" style="width:50%;"></center>
+        <center><img src="http://res.cloudinary.com/db45meith/image/upload/v1506585970/pgprjncyp1kin6tbf59b.png" alt="New York" style="width:50%;"></center>
+        </div>
+
+      <div class="item">
+        <center><img src="http://res.cloudinary.com/db45meith/image/upload/v1506585404/lukwthaifkdwmohht1v1.png" alt="Chicago" style="width:50%;"></center>
+        </div>
+
+      <div class="item">
+        <center><img src="http://res.cloudinary.com/db45meith/image/upload/v1506585970/pgprjncyp1kin6tbf59b.png" alt="New York" style="width:50%;"></center>
+        <div class="carousel-caption">
+          <h3>New York</h3>
+          <p>We love the Big Apple!</p>
+        </div>
       </div>
+
     </div>
 
     <!-- Left and right controls -->
@@ -91,6 +122,7 @@
   </div>
 </div>
 
+<!-- ４つのサムネイル -->
 
 <div class="container-fluid bg-3 text-center">
   <h3>Sheen's English</h3><br>
@@ -114,6 +146,8 @@
   </div>
 </div><br>
 
+
+<!-- ３つめが謎の巨大化　おそらく最初の影響を受けているはず。 -->
 <div class="container-fluid bg-3 text-center">
   <h3>活動一覧</h3><br>
   <div class="row">
@@ -125,7 +159,7 @@
       <p>Some text..</p>
       <img src="http://res.cloudinary.com/db45meith/image/upload/v1506589612/qp3naolrcdhtu4qdyejt.png" class="img-responsive" style="width:100%" alt="Image">
     </div>
-    <div class="col-sm-3B (49,581 バイト)">
+    <div class="col-sm-3">
       <p>Some text..</p>
       <img src="http://res.cloudinary.com/db45meith/image/upload/v1506585970/pgprjncyp1kin6tbf59b.png" class="img-responsive" style="width:100%" alt="Image">
     </div>
@@ -138,7 +172,7 @@
 
 <div class="container-fluid bg-3 text-center">
   <h3>活動一覧</h3><br>
-  <div class="row">B (49,581 バイト)
+  <div class="row">
     <div class="col-sm-3">
       <p>Some text..</p>
       <img src="https://lh3.googleusercontent.com/VW5pUbjRJn8FNQ8XlGLAJXePnPFWItZA8MLU8DZ4pWrXfm7iJDKWscxSYajF-4Hd07Pq93oD4ntJ_CLWg9DqzCvjZUiz8ZJgbY6syxQqafa8TI4hGwSUjok_-2-0a8Nndvvr24rYVTD_iMOG8X3Sr794Na2E07bwU0xq1o1TxRzK_44IqsgvPil9m1OFQ9yixKq72Ao-ptclGsKkCCSU6feP5UW7DJxVh-db7CxZHvutAQHnfR1yUpWJXR4ZKDM9fxuTIhT1lUWl8OW2daxOumNz0MQD0RJbnheFneyr1VpKzVTIjrLeDPkjInJE6CPBf8tq3zQXEeSwaY-svIuKQUAaPLZOs6kwph87_BuLta9r6XSdbPUMxPAFm7pNjxq6rpY9AyxzdNqSt8J4NgMnxIkimH_hGESA7-v8Cw3leDqYxvYkC2vl8rS35pA0eWNPMctF8ZAWv9EZ663R_vyxLd0XO0FGzyTZQ89Lv7cDysztBiugkelQSiRLtKPSIEec5zeUc1uXS3ciESPX_paBlSqtC4-4ZsRbkl9qEDXMkVFw08_-Xoj-prT0zm7BJRFJPcYkg0BH0cEI2BfrjiZUUvQacRjQdvHDSW79ASvbCfA=w855-h640-no" class="img-responsive" style="width:100%" alt="Image">
@@ -174,7 +208,7 @@
     </div>
     <div class="col-sm-3">
       <p>Some text..</p>
-      <img src="https://lh3.googleusercontent.com/N82YkcxLkK8pqkkUWjx_oZoOxtRvc8T-JnwhNt4G7Hfpveyzq8lQ3EOwWklqhA6I4xWVQF70dUYtIETJ9Ow0ukPQkJrNNio97-ueheNyN_SpWSYijegFCi2FC_V4S4B9vsa85zJLYOweRwSJFsZ2oTL1wa9Dz9Kz1m5L4-AZcNU3TP_kVXQEYCQvPx0xRzMk5nkNrrRz7Un0EyhWsc-48a_j62DV3PIDKmMYEKR5N5EyeVsuVW9ZN1FXSD7IUhm7fdeoxFRwfzZxihDTQKHkdW_IDGQpolL5gwIR37c_6d-zRwZ8pIFugJYGOYQBK_CeV4AsuKYqbz-6vBdobi4f51SR7JLunmyBy1iVIcZbxJOluaoBQAw1IXZIi1IK1K8lj46Uq59MY-3gZ943SkKo5l3SIeFsGD9EW0oColQY780nHMi7DuwQl5Gb8JjiEaZ7Tg6EnExR-lG3JFVAnzxmQSY3-OZe6kmcJO-tgU0BqStFz5cky2FxHxUdk5c7sR32Wd8uvlttAJdZ9gCV-l2gz9wyCfCgpDpeWuKU0fZzF1Rg3yAgykeFBBuWbQTL9N5RBroZIe9FCPECk-SkEX3OeSGS4FP45CbvnK7DcKiJO3E=w855-h640-no" class="img-responsive" style="width:100%" alt="Image">
+      <img src="https://scontent-nrt1-1.xx.fbcdn.net/v/t34.0-12/25287243_1792741827475219_1420655505_n.jpg?oh=a0350c6e5a48636efa2d465e98c7ecc6&oe=5A311BA0" class="img-responsive" style="width:100%" alt="Image">
     </div>
   </div>
 </div><br><br>
